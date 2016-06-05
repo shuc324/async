@@ -1,0 +1,37 @@
+[GearmanManager]
+; workers can be found in this dir
+; separate multiple dirs with a comma
+; multiple dirs only supported by pecl workers
+worker_dir = ./app/Worker
+
+; A list of workers in worker_dir to exclude
+exclude = Worker
+
+; host - The gearmand host
+host = 192.168.99.100:4730
+
+; 10 workers will do all jobs
+count = 3
+
+; Workers will only live for 1 hour
+max_worker_lifetime = 3600
+
+; Reload workers as new code is available
+auto_update = true
+
+; Timeout n seconds for all jobs before work is reissued to another worker
+timeout = 300
+
+; Path to log file or syslog
+log_file=./storage/gearman/gearman.log
+
+; Other configuration options
+; auto_update - If non-zero, workers are restarted when worker code changes, defaults to on
+; exclude - A list of workers in worker_dir to exclude
+; host - The gearmand host
+; log_file - Path to log file or syslog
+; max_runs_per_worker - Maximum number of jobs a worker will process before restarting
+; pid_file - Path to the file where the pid will be stored for the main process
+; prefix - Prefix for class names used by workers
+; user - System user to run as
+; worker_restart_splay - Number of seconds to stagger restarting and launching of workers to prevent all workers dying at once

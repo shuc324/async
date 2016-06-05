@@ -1,0 +1,11 @@
+.idea
+
+vendor
+
+storage
+
+composer.lock
+
+test.php
+
+config/*.ini
